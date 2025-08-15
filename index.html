@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freshies — Toko Makanan Sehat</title>
+  <meta name="description" content="Freshies: toko makanan sehat dengan bahan segar dan lezat. Pesan online, makan sehat jadi gampang.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/svg/leaf-logo.svg" alt="Logo Freshies" class="logo" />
+        <span class="brand-name">Freshies</span>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#best-sellers">Terlaris</a></li>
+          <li><a href="#shop">Belanja</a></li>
+          <li><a href="#testimonials">Testimoni</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </nav>
+      <button id="open-cart" class="btn btn-coral" aria-label="Buka keranjang">
+        Keranjang <span id="cart-count" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Makan Sehat, Hidup Lebih <span class="highlight">Fresh</span>.</h1>
+          <p>Menu seimbang dengan bahan segar. Pesan sekarang, rasakan bedanya.</p>
+          <a href="#shop" class="btn btn-primary">Lihat Menu</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <img src="assets/svg/hero-bowl.svg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Sellers Slider -->
+    <section id="best-sellers" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Produk Terlaris</h2>
+          <p>Pilihan favorit pelanggan Freshies</p>
+        </div>
+
+        <div class="slider" role="region" aria-label="Slider produk terlaris">
+          <button class="slider-btn prev" aria-label="Sebelumnya" id="slider-prev">&#10094;</button>
+          <div class="slides-wrapper" id="slides-wrapper">
+            <!-- Slides injected by JS -->
+          </div>
+          <button class="slider-btn next" aria-label="Selanjutnya" id="slider-next">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Grid -->
+    <section id="shop" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Belanja Sehat</h2>
+          <p>Pilih menu favoritmu, tambah ke keranjang, dan checkout.</p>
+        </div>
+        <div class="grid" id="product-grid" aria-live="polite">
+          <!-- Products injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Testimoni Pelanggan</h2>
+          <p>Bagikan pengalamanmu bersama Freshies</p>
+        </div>
+
+        <form id="testimonial-form" class="card">
+          <div class="form-row">
+            <label for="t-name">Nama</label>
+            <input type="text" id="t-name" name="name" placeholder="Nama kamu" required />
+          </div>
+          <div class="form-row">
+            <label for="t-message">Testimoni</label>
+            <textarea id="t-message" name="message" rows="3" placeholder="Tulis pengalaman kamu..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Kirim Testimoni</button>
+        </form>
+
+        <div class="grid testimonials" id="testimonial-list" aria-live="polite">
+          <!-- Testimonials injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Kritik & Saran -->
+    <section id="feedback" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Kritik &amp; Saran</h2>
+          <p>Kami ingin terus membaik. Sampaikan masukan kamu.</p>
+        </div>
+        <form id="feedback-form" class="card">
+          <div class="form-row">
+            <label for="f-name">Nama (opsional)</label>
+            <input type="text" id="f-name" name="name" placeholder="Boleh dikosongkan" />
+          </div>
+          <div class="form-row">
+            <label for="f-message">Pesan</label>
+            <textarea id="f-message" name="message" rows="4" placeholder="Tulis kritik atau saran..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-coral">Kirim Masukan</button>
+          <p id="feedback-status" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact / Address -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Kontak & Alamat</h2>
+        </div>
+        <div class="card address">
+          <div class="address-line">
+            <img src="assets/svg/pin.svg" alt="" class="icon" aria-hidden="true" />
+            <span>Jl. Soekarno 72, Bogor</span>
+          </div>
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://maps.google.com/?q=Jl.+Soekarno+72,+Bogor">Lihat di Maps</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <aside id="cart-drawer" class="cart" aria-hidden="true" aria-labelledby="cart-title">
+    <div class="cart-inner">
+      <div class="cart-head">
+        <h3 id="cart-title">Keranjang</h3>
+        <button id="close-cart" class="icon-btn" aria-label="Tutup keranjang">&times;</button>
+      </div>
+      <div id="cart-items" class="cart-items">
+        <!-- Items injected by JS -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          Total: <strong id="cart-total">Rp0</strong>
+        </div>
+        <button id="checkout-btn" class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="checkout-title">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3 id="checkout-title">Checkout</h3>
+        <button id="close-modal" class="icon-btn" aria-label="Tutup modal">&times;</button>
+      </div>
+      <form id="checkout-form">
+        <div class="form-row">
+          <label for="c-name">Nama Penerima</label>
+          <input type="text" id="c-name" name="name" required />
+        </div>
+        <div class="form-row">
+          <label for="c-phone">No. HP</label>
+          <input type="tel" id="c-phone" name="phone" required />
+        </div>
+        <div class="form-row">
+          <label for="c-address">Alamat Pengantaran</label>
+          <textarea id="c-address" name="address" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-coral">Buat Pesanan</button>
+        <p id="checkout-status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Freshies. Semua hak cipta dilindungi.</p>
+      <p class="small">Dibuat dengan HTML, CSS, dan JavaScript murni.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
